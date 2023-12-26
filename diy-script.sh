@@ -1,7 +1,10 @@
 #!/bin/bash
 
 # 修改默认IP
-# sed -i 's/192.168.99.1/10.0.0.1/g' package/base-files/files/bin/config_generate
+sed -i 's/192.168.1.1/192.168.99.1/g' package/base-files/files/bin/config_generate
+
+# 设置免密码登录(个别源码本身就没密码的)
+export Password_free_login="1"               # 设置首次登录后台密码为空（进入openwrt后自行修改密码）(1为启用命令,填0为不作修改)
 
 # 更改默认 Shell 为 zsh
 # sed -i 's/\/bin\/ash/\/usr\/bin\/zsh/g' package/base-files/files/etc/passwd
